@@ -14,16 +14,122 @@ Scene* SecondPass::createScene()
 bool SecondPass::init()
 {
     
+
     if ( !GameBackground::init() ) {
         return false;
     }
     
     baseWork();
+
+	SceneBuilder *sbuild = new SceneBuilder();
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    auto upplatform1 = Sprite::create("chapter2\\2upplatform1.png");
+	//brick_vector
+
+	Sprite* upplatform1;
+	sbuild->setBrick(upplatform1, "chapter2\\2upplatform1.png", 124, 360);
+	sbuild->setBrickPhysics(upplatform1, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(upplatform1);
+	brick_vec.push_back(upplatform1);
+	Sprite* downplatform1;
+	sbuild->setBrick(downplatform1, "chapter2\\2downplatform1.png", 124, 280);
+	sbuild->setBrickPhysics(downplatform1, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(downplatform1);
+	brick_vec.push_back(downplatform1);
+
+	Sprite* upplatform2;
+	sbuild->setBrick(upplatform2, "chapter2\\2upplatform1.png", 372, 360);
+	sbuild->setBrickPhysics(upplatform2, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(upplatform2);
+	brick_vec.push_back(upplatform2);
+	Sprite* downplatform2;
+	sbuild->setBrick(downplatform2, "chapter2\\2downplatform1.png", 372, 280);
+	sbuild->setBrickPhysics(downplatform2, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(downplatform2);
+	brick_vec.push_back(downplatform2);
+
+	Sprite* upplatform3;
+	sbuild->setBrick(upplatform3, "chapter2\\2upplatform2.png", 420, 390);
+	sbuild->setBrickPhysics(upplatform3, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(upplatform3);
+	brick_vec.push_back(upplatform3);
+	Sprite* downplatform3;
+	sbuild->setBrick(downplatform3, "chapter2\\2downplatform2.png", 420, 250);
+	sbuild->setBrickPhysics(downplatform3, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(downplatform3);
+	brick_vec.push_back(downplatform3);
+
+	Sprite* upplatform4;
+	sbuild->setBrick(upplatform4, "chapter2\\2upplatform1.png", 668, 360);
+	sbuild->setBrickPhysics(upplatform4, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(upplatform4);
+	brick_vec.push_back(upplatform4);
+	Sprite* downplatform4;
+	sbuild->setBrick(downplatform4, "chapter2\\2downplatform1.png", 668, 280);
+	sbuild->setBrickPhysics(downplatform4, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(downplatform4);
+	brick_vec.push_back(downplatform4);
+
+	Sprite* upplatform5;
+	sbuild->setBrick(upplatform5, "chapter2\\2upplatform2.png", 716, 390);
+	sbuild->setBrickPhysics(upplatform5, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(upplatform5);
+	brick_vec.push_back(upplatform5);
+	Sprite* downplatform5;
+	sbuild->setBrick(downplatform5, "chapter2\\2downplatform2.png", 716, 250);
+	sbuild->setBrickPhysics(downplatform5, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(downplatform5);
+	brick_vec.push_back(downplatform5);
+
+	Sprite* upplatform6;
+	sbuild->setBrick(upplatform6, "chapter2\\2upplatform3.png", 764, 420);
+	sbuild->setBrickPhysics(upplatform6, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(upplatform6);
+	brick_vec.push_back(upplatform6);
+	Sprite* downplatform6;
+	sbuild->setBrick(downplatform6, "chapter2\\2downplatform3.png", 764, 220);
+	sbuild->setBrickPhysics(downplatform6, true, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 6);
+	addChild(downplatform6);
+	brick_vec.push_back(downplatform6);
+
+	//thorn_vector
+
+	Sprite* upthorn1;
+	sbuild->setThorn(upthorn1, "chapter2\\2upthorn1.png", 152, 360);
+	sbuild->setThornPhysics(upthorn1, true, 1.0f, 0.4f, 1.0f, 0.0f, 0.0f, 2);
+	addChild(upthorn1);
+	thorn_vec.push_back(upthorn1);
+	Sprite* downthorn1;
+	sbuild->setThorn(downthorn1, "chapter2\\2downthorn1.png", 152, 280);
+	sbuild->setThornPhysics(downthorn1, true, 1.0f, 0.4f, 1.0f, 0.0f, 0.0f, 2);
+	addChild(downthorn1);
+	thorn_vec.push_back(downthorn1);
+
+	Sprite* upthorn2;
+	sbuild->setThorn(upthorn2, "chapter2\\2upthorn2.png", 448, 390);
+	sbuild->setThornPhysics(upthorn2, true, 1.0f, 0.4f, 1.0f, 0.0f, 0.0f, 2);
+	addChild(upthorn2);
+	thorn_vec.push_back(upthorn2);
+	Sprite* downthorn2;
+	sbuild->setThorn(downthorn2, "chapter2\\2downthorn2.png", 448, 250);
+	sbuild->setThornPhysics(downthorn2, true, 1.0f, 0.4f, 1.0f, 0.0f, 0.0f, 2);
+	addChild(downthorn2);
+	thorn_vec.push_back(downthorn2);
+
+	Sprite* upthorn3;
+	sbuild->setThorn(upthorn3, "chapter2\\2upthorn3.png", 792, 420);
+	sbuild->setThornPhysics(upthorn3, true, 1.0f, 0.4f, 1.0f, 0.0f, 0.0f, 2);
+	addChild(upthorn3);
+	thorn_vec.push_back(upthorn3);
+	Sprite* downthorn3;
+	sbuild->setThorn(downthorn3, "chapter2\\2downthorn3.png", 792, 220);
+	sbuild->setThornPhysics(downthorn3, true, 1.0f, 0.4f, 1.0f, 0.0f, 0.0f, 2);
+	addChild(downthorn3);
+	thorn_vec.push_back(downthorn3);
+
+    /*auto upplatform1 = Sprite::create("chapter2\\2upplatform1.png");
     upplatform1->setPosition(Vec2(124, 360));
     addChild(upplatform1);
     auto p_upplatform1 = PhysicsBody::createEdgeBox(upplatform1->getContentSize(), PhysicsMaterial(1.0f, 1.0f, 0.0f));
@@ -148,7 +254,7 @@ bool SecondPass::init()
     auto pdownthornp3 = PhysicsBody::createEdgeBox(Size(8, 150), PhysicsMaterial(1.0f, 0.4f, 0.0f));
     pdownthornp3->setContactTestBitmask(1);
     pdownthornp3->setGroup(2);
-    downthorn3->setPhysicsBody(pdownthornp3);
+    downthorn3->setPhysicsBody(pdownthornp3);*/
 
 
 
